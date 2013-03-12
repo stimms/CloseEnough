@@ -1,25 +1,26 @@
+using CloseEnough.Tests;
 using System;
-using NUnit.Framework;
+using Xunit;
+using CloseEnough;
 
 namespace CloseEnough.Tests
 {
-	[TestFixture]
 	public class When_working_with_properties
 	{
-		//[Test]
+		//[Fact]
 		public void Matching_name_is_set ()
 		{
 			Muffin muffin = new Muffin();
 			muffin.CE().Flavour = "orange";
-			Assert.AreEqual(muffin.Flavour, "orange");
+			Assert.Equal(muffin.Flavour, "orange");
 		}
 
-		//[Test]
+		//[Fact]
 		public void Matching_name_is_retrieved()
 		{
 			Muffin muffin = new Muffin();
 			muffin.Flavour = "orange";
-			Assert.AreEqual(muffin.CE ().Flavour, "orange");
+			Assert.Equal(muffin.CE ().Flavour, "orange");
 		}
 	}
 }
